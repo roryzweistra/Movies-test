@@ -37,8 +37,5 @@ xhr.onload = function() {
 	listView.setData(data);
 };
 
-var lat = 52.18958;
-var lon = 5.29524;
-
-xhr.open('GET', 'http://wordpress.oqapi.nl/poiadmin/index.php/poiservice/get_pois_on_proximity/' + lat + '/' + lon );
+xhr.open('GET', 'http://wordpress.oqapi.nl/poiadmin/index.php/poiservice/get_pois_on_radius/' + Ti.App.Properties.getString('current_lat') + '/' + Ti.App.Properties.getString('current_lon') );
 xhr.send();
